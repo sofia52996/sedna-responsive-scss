@@ -1,0 +1,43 @@
+@mixin size($width: false, $height: false){
+    @if $width { width: $width; }
+    @if $height { height: $height; }
+}
+
+@mixin spacing($var, $top: false, $right: false, $bottom: false, $left: false){
+    @if #{$var}-top { #{$var}-top: $top };
+    @if #{$var}-right { #{$var}-right: $right; }
+    @if #{$var}-bottom { #{$var}-bottom: $bottom; }
+    @if #{$var}-left { #{$var}-left: $left; }
+}
+
+@mixin font($font-size: 14px, $color: black, $font-weight: false, $line-height: false, $font-style: normal){
+    font-size: $font-size;
+    color: $color;
+    font-style: $font-style;
+
+    @if $font-weight{ font-weight: $font-weight; }
+    @if $line-height{ line-height: $line-height; }
+}
+
+@mixin abs-position($top: false, $right: false, $bottom: false, $left: false){
+    position: absolute;
+    @if $top { top: $top; }
+    @if $right { right: $right; } 
+    @if $bottom { bottom: $bottom; }
+    @if $left { left: $left; }
+}
+
+@mixin border($border: false, $border-style: solid, $border-color: black, $border-radius: false){
+    @if $border { border: $border $border-style $border-color; }
+    @if $border-radius { border-radius: $border-radius; }
+}
+
+@mixin a-inline-block{
+    display: inline-block;
+    line-height: 0;
+}
+
+
+@mixin mobile{
+    @content;
+}
